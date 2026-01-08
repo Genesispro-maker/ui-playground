@@ -10,13 +10,20 @@ export function Illustration(){
 
     return(
         <>
-        <div>
+        <div className={styles.boxWrapper}>
+          <div className={styles.boxWrap}>
           <div className={styles.box} style={{translate: `${translateX}px ${translateY}px`}}></div>
           </div>
 
-          <div className={styles.wrapper}>
+              <div className={styles.valuesWrapper}>
+                <code>transform: translate({translateX}px, {translateY}px)</code>
+              </div>
+          <div className={styles.Rangewrapper}>
+            <p>X</p>
             <input type="range" min={-100} max={100} value={horizontalPosition} onChange={(e) => setHorizontalPosition(Number(e.target.value))}/>
-            <input type="range" className={styles.verticalInput} min={-100} max={100} value={verticalPosition} onChange={(e) => setVerticalPosition(Number(e.target.value))}/>
+            <p>Y</p>
+            <input type="range" className={styles.range} min={-100} max={100} value={verticalPosition} onChange={(e) => setVerticalPosition(Number(e.target.value))}/>
+          </div>
           </div>
         </>
     )
