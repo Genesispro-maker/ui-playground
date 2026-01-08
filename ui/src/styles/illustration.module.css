@@ -62,9 +62,3 @@
   padding-left: 25px;
   border-radius: 3px;
 }
-
-
-.verticalCoords{
-  display: flex;
-  justify-content: space-evenly;
-}
