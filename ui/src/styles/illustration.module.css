@@ -26,5 +26,22 @@
     width: var(--width);
     height: var(--height);
     background-color: lightgray;
-    filter: drop-shadow(var(--shadow-elevation-high));
+    box-shadow: var(--shadow-elevation-medium);
+    margin: auto;
+    border-radius: 10px;
+}
+
+.wrapper{
+    display: flex;
+    width: 500px;
+    height: 200px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.boxWrapper{
+    max-width: 800px;
+    height: 500px;
+    margin: 30px auto;
+    padding: 100px;
 }
