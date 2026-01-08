@@ -10,7 +10,7 @@ export function Illustration(){
 
     return(
         <>
-        <div className={styles.boxWrapper}>
+        <div>
           <div className={styles.box} style={{translate: `${translateX}px ${translateY}px`}}></div>
           </div>
 

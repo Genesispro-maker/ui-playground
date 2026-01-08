@@ -21,14 +21,14 @@
 }
 
 .box{
-    --width: 150px;
-    --height: 150px;
+    --width: 64px;
+    --height: 64px;
     width: var(--width);
     height: var(--height);
-    background-color: lightgray;
-    box-shadow: var(--shadow-elevation-medium);
+    /* box-shadow: var(--shadow-elevation-medium); */
     margin: auto;
     border-radius: 10px;
+    background-color: black;
 }
 
 .wrapper{
@@ -40,8 +40,14 @@
 }
 
 .boxWrapper{
-    max-width: 800px;
-    height: 500px;
+    max-width: 649px;
+    height: 160px;
     margin: 30px auto;
     padding: 100px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.range::-webkit-slider-thumb{
+    background-color: black;
 }
