@@ -19,11 +19,11 @@ export function Illustration(){
                 <code>transform: translate({translateX}px, {translateY}px)</code>
               </div>
           <div className={styles.Rangewrapper}>
-            <p>X: {translateX}</p>
+            <p className={styles.Text}>X : {translateX}</p>
             <input type="range" className={styles.verticalRange} min={-100} max={100} value={horizontalPosition} onChange={(e) => setHorizontalPosition(Number(e.target.value))}/>
              
             <input type="range" min={-100} max={100} value={verticalPosition} onChange={(e) => setVerticalPosition(Number(e.target.value))}/>
-            <p>Y: {translateY}</p>
+            <p className={styles.Text}>Y: {translateY}</p>
           </div>
           </div>
         </>
