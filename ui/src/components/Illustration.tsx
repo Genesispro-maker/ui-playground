@@ -19,10 +19,16 @@ export function Illustration(){
                 <code>transform: translate({translateX}px, {translateY}px)</code>
               </div>
           <div className={styles.Rangewrapper}>
-            <p>X</p>
+            <div className={styles.verticalCoords}>
+              <span>X</span>
+              <span>{translateX}</span>
+            </div>
             <input type="range" min={-100} max={100} value={horizontalPosition} onChange={(e) => setHorizontalPosition(Number(e.target.value))}/>
-            <p>Y</p>
-            <input type="range" className={styles.range} min={-100} max={100} value={verticalPosition} onChange={(e) => setVerticalPosition(Number(e.target.value))}/>
+              <div className={styles.verticalCoords}>
+                <span>Y</span>
+                <span>{translateY}</span>
+              </div>
+            <input type="range" min={-100} max={100} value={verticalPosition} onChange={(e) => setVerticalPosition(Number(e.target.value))}/>
           </div>
           </div>
         </>
