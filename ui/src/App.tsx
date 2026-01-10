@@ -5,6 +5,7 @@ function App(){
     <>
      <Header />
      <Illustration />
+       <Audio />
     </>
    )
 }
