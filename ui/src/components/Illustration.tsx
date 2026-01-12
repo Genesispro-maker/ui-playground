@@ -2,30 +2,29 @@ import { useState } from "react"
 import styles from "../styles/illustration.module.css"
 
 export function Illustration(){
-    const [horizontalPosition, setHorizontalPosition] = useState<number>(0)
-    const [verticalPosition, setVerticalPosition] = useState<number>(0)
-
-    const translateX = horizontalPosition
-    const translateY = verticalPosition
-
+     const [position, setPosition] = useState({
+        x: 0,
+        y: 0,
+     })
     return(
         <>
-        <div className={styles.boxWrapper}>
+        <main className={styles.boxWrapper}>
           <div className={styles.boxWrap}>
-          <div className={styles.box} style={{translate: `${translateX}px ${translateY}px`}}></div>
+          <div className={styles.box} style={{translate: `${position.x}px ${position.y}px`}}></div>
           </div>
 
               <div className={styles.valuesWrapper}>
-                <code>transform: translate({translateX}px, {translateY}px)</code>
+                <code>transform: translate({position.x}px, {position.y}px)</code>
               </div>
           <div className={styles.Rangewrapper}>
-            <p className={styles.Text}>X : {translateX}</p>
-            <input type="range" className={styles.verticalRange} min={-100} max={100} value={horizontalPosition} onChange={(e) => setHorizontalPosition(Number(e.target.value))}/>
+            <p className={styles.Text}>X : {position.x}</p>
+            <input type="range" className={styles.verticalRange} min={-100} max={100} value={position.x} onChange={(e) => setPosition({...position, x: Number(e.target.value)})}/>
              
-            <input type="range" min={-100} max={100} value={verticalPosition} onChange={(e) => setVerticalPosition(Number(e.target.value))}/>
-            <p className={styles.Text}>Y: {translateY}</p>
+            <input type="range" min={-100} max={100} value={position.y} onChange={(e) => setPosition({...position, y: Number(e.target.value)})}/>
+            <p className={styles.Text}>Y: {position.y}</p>
+
           </div>
-          </div>
+          </main>
         </>
     )
 }
