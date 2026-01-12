@@ -1,3 +1,5 @@
+@import "../assets/font.css";
+
 :root {
   --shadow-color: 285deg 26% 35%;
   --shadow-elevation-low:
@@ -19,15 +21,6 @@
     67.5px -10.7px 51.3px -4.3px hsl(var(--shadow-color) / 0.25),
     106.7px -16.9px 81px -5px hsl(var(--shadow-color) / 0.13);
 }
-
-@font-face {
-  font-family: "Doto";
-  src: url("/ui/public/Doto/static/Doto_Rounded-Regular.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 
 .boxWrap{
   flex: 3;
