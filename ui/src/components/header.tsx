@@ -1,6 +1,18 @@
 
+import { Github } from "lucide-react"
+import { Fragment } from "react/jsx-runtime"
+import styles from "../styles/header.module.css"
+
 export const Header = () => {
   return (
-    <div>header</div>
+    <Fragment>
+         <header className={styles.header}>
+            <h2>ui play</h2>
+
+              <a href="https://github.com/Genesispro-maker/" className={styles.link}>
+                 <Github size={25} fill="none" className={styles.github}/>
+              </a> 
+         </header>
+    </Fragment>
   )
 }
