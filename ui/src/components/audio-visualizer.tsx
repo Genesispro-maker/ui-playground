@@ -4,6 +4,7 @@ import styles from "../styles/audio-visualizer.module.css"
 
 export function AudioVisualizer(){
     const [playing, setPlaying] = useState<boolean>(false)
+    const [volume, setVolume] = useState<number>(0)
 const canvasRef = useRef<HTMLCanvasElement | null>(null)
 const audioRef = useRef<HTMLAudioElement | null>(null)
 const audioCtxRef = useRef<AudioContext | null>(null)
