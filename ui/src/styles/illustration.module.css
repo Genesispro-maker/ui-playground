@@ -22,11 +22,10 @@
 
 @font-face {
   font-family: "Doto";
-  src: url("/ui/public/Doto/Doto-VariableFont_ROND,wght.ttf") format("truetype");
+  src: url("/ui/public/Doto/static/Doto_Rounded-Regular.ttf") format("truetype");
   font-weight: 100 900;
+  font-style: normal;
   font-display: swap;
-   font-variation-settings:
-    "ROND" 100;
 }
 
 
@@ -75,6 +74,5 @@
 
 .Text{
   font-family: "Doto", sans-serif;
-  font-weight: 900;
-  
+  font-weight: 700;
 }
