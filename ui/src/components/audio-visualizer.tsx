@@ -2,6 +2,7 @@ import { Pause, Play } from "lucide-react"
 import { useRef, useState } from "react"
 import styles from "../styles/audio-visualizer.module.css"
 
+
 export function AudioVisualizer(){
     const [playing, setPlaying] = useState<boolean>(false)
 const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -10,6 +11,7 @@ const audioCtxRef = useRef<AudioContext | null>(null)
 const analyserRef = useRef<AnalyserNode | null>(null)
 const sourceRef = useRef<MediaElementAudioSourceNode | null>(null)
 const animationRef = useRef<number | null>(null)
+ 
 
 function handleClick() {
   if (!canvasRef.current) return
@@ -24,6 +26,7 @@ function handleClick() {
 
   if (!audioCtxRef.current) {
     audioCtxRef.current = new AudioContext()
+    
   }
 
   const audioCtx = audioCtxRef.current
