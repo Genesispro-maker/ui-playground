@@ -4,7 +4,8 @@ import styles from "../styles/audio-visualizer.module.css"
 
 
 export function AudioVisualizer(){
-    const [playing, setPlaying] = useState<boolean>(false)
+  
+const [playing, setPlaying] = useState<boolean>(false)
 const canvasRef = useRef<HTMLCanvasElement | null>(null)
 const audioRef = useRef<HTMLAudioElement | null>(null)
 const audioCtxRef = useRef<AudioContext | null>(null)
@@ -26,8 +27,7 @@ function handleClick() {
 
   if (!audioCtxRef.current) {
     audioCtxRef.current = new AudioContext()
-    
-  }
+  } 
 
   const audioCtx = audioCtxRef.current
   audioCtx.resume()
