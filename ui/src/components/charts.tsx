@@ -5,7 +5,7 @@ export function Charts(){
    return (
     <>
     <div  style={{width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}>
-      <ResponsiveContainer>
+      <ResponsiveContainer width="100%" height="100%">
       <BarChart data={ChartData}
        margin={{
         top: 5,
