@@ -6,7 +6,7 @@ export function Guess({value}: {value: string}){
         <>
           <div>
             <p className={styles.letter}>{range(5).map((num) => {
-                return <span key={num} className={styles.cell}>{value[num]}</span>
+               return <span className={styles.cell} key={num}>{value[num]}</span>
             })}</p>
           </div>
         </>
