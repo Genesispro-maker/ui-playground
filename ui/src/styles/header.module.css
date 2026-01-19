@@ -1,9 +1,17 @@
 .header{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 30px;
-    position: relative;
-    z-index: 1;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     width: 1300px;
+     padding: 20px;
+     margin: auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 1000;
+     background-color: hsl(0 0% 94% 0.6);
+     backdrop-filter: blur(2px);
 }
 
 .link{
