@@ -1,23 +1,36 @@
 import { useState } from "react";
-import { SAMPLE, WORDS } from "../../utils/game";
+import { NUM_OF_GUESSES, SAMPLE, WORDS } from "../../utils/game";
 import { GuessInput } from "./guess-Input";
 import { GuessResult } from "./guess-result";
 import { Header } from "./header";
+import { GameOver } from "./gameOver";
 
 const answer = SAMPLE(WORDS)
 console.log({answer})
 
 export function WORDLE(){
+    const [gameStatus, setGameStatus] = useState<string>("running")
     const [guesses, setGuesses] = useState([])
 
        function HandleGuess(guess){
-          setGuesses([...guesses, guess])
-       }
+        const nextGuesses = [...guesses, guess]
+        setGuesses(nextGuesses)
+
+            if(guess.toUpperCase() === answer){
+                setGameStatus("won")
+            }
+            else if(nextGuesses.length >= NUM_OF_GUESSES){
+                setGameStatus("lost")
+            }
+
+        }
     return (
         <>
+          {gameStatus}
           <Header />
           <GuessResult guesses={guesses} answer={answer}/>
-          <GuessInput handleGuessInput={HandleGuess}/>
+          <GuessInput handleGuessInput={HandleGuess} gameStatus={gameStatus}/>
+          {gameStatus !== "running" && <GameOver gameStatus={gameStatus} numofguesses={guesses.length} answer={answer}/>}
         </>
     )
 }
