@@ -12,7 +12,7 @@ export function WORDLE(){
     return (
         <>
           <Header />
-          <GuessResult />
+          <GuessResult guess={guess}/>
           <GuessInput guess={guess} setGuess={setGuess}/>
         </>
     )
