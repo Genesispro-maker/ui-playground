@@ -8,6 +8,7 @@ const answer = SAMPLE(WORDS)
 console.log({answer})
 
 export function WORDLE(){
+    const [guesses, setGuesses] = useState([])
     return (
         <>
           <Header />
