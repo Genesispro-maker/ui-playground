@@ -1,10 +1,12 @@
 import { ChartData } from "../utils/mockData";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 export function Charts(){
    return (
     <>
-      <BarChart style={{width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }} responsive data={ChartData}
+    <div  style={{width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}>
+      <ResponsiveContainer>
+      <BarChart data={ChartData}
        margin={{
         top: 5,
         right: 0,
@@ -21,6 +23,8 @@ export function Charts(){
         <Bar dataKey="mobile" fill="#3f1e74ff" activeBar={{fill: "gold", stroke: "purple"}} radius={[10, 10, 0, 0]}/>
         <Bar dataKey="tablet" fill="#82ca9d" activeBar={{fill: "pink", stroke: "blue"}} radius={[10, 10, 0, 0]}/>
       </BarChart>
+      </ResponsiveContainer>
+      </div>
     </>
    )
 }
