@@ -1,5 +1,5 @@
 import { AudioVisualizer } from "./components/audio-visualizer";
-import { Charts } from "./components/charts";
+// import { Charts } from "./components/charts";
 import { Header } from "./components/header";
 import { Illustration } from "./components/Illustration";
 function App(){
@@ -8,7 +8,7 @@ function App(){
      <Header />
      <Illustration />
      <AudioVisualizer />
-     {/* <Charts /> */}
+       {/* <Charts /> */}
     </>
    )
 }
