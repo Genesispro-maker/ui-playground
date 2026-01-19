@@ -5,7 +5,9 @@ export function GuessInput({handleGuessInput}){
 
     function handleSubmit(e: ChangeEvent<HTMLFormElement>){
         e.preventDefault()
+        
          handleGuessInput(tentativeGuess)
+
          setTentativeGuess('')
     }
     return (
