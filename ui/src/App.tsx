@@ -8,7 +8,7 @@ function App(){
      <Header />
      <Illustration />
      <AudioVisualizer />
-     <Charts />
+     {/* <Charts /> */}
     </>
    )
 }
