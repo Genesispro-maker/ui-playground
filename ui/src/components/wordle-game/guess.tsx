@@ -1,10 +1,8 @@
 import styles from "./wordle.module.css"
-import { checkGuess, range } from "../../utils/game"
+import {  range } from "../../utils/game"
 
 
-export function Guess({ value, answer,}: { value?: string, answer: string}) {
-
-  const result = checkGuess(value, answer)
+export function Guess({ value}: { value: string, answer: string}) {
 
   return (
     <div>
