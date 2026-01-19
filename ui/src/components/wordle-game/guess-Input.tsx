@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent } from "react"
 
-export function GuessInput({handleGuessInput, gameStatus}){
+export function GuessInput({handleGuessInput, gameStatus}: {handleGuessInput: any, gameStatus: string}){
       const [tentativeGuess, setTentativeGuess] = useState("")
 
     function handleSubmit(e: ChangeEvent<HTMLFormElement>){
