@@ -1,4 +1,4 @@
-const WORDS = [
+const WORDS : string[]= [
   'AGENT',
   'WORLD',
   'ABOUT',
@@ -53,7 +53,7 @@ const WORDS = [
 
 const NUM_OF_GUESSES = 6
 
-const SAMPLE = (arr: number[]) => {
+const SAMPLE = (arr: string[]) => {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
