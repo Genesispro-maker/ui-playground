@@ -10,9 +10,9 @@ console.log({answer})
 
 export function WORDLE(){
     const [gameStatus, setGameStatus] = useState<string>("running")
-    const [guesses, setGuesses] = useState([])
+    const [guesses, setGuesses] = useState<string[]>([])
 
-       function HandleGuess(guess){
+       function HandleGuess(guess: string){
         const nextGuesses = [...guesses, guess]
         setGuesses(nextGuesses)
 
