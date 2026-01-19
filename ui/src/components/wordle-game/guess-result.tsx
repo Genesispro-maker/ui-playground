@@ -1,8 +1,8 @@
-export function GuessResult({guess}: {guess: string}){
+export function GuessResult(){
     return(
         <>
           <div>
-            <p>{guess}</p>
+            <p>guess</p>
           </div>
         </>
     )
