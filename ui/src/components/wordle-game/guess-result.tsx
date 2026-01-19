@@ -1,3 +1,9 @@
-export function GuessResult(){
-    return <p>guess results</p>
+export function GuessResult({guess}: {guess: string}){
+    return(
+        <>
+          <div>
+            <p>{guess}</p>
+          </div>
+        </>
+    )
 }
