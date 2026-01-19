@@ -1,8 +1,10 @@
-export function GuessResult(){
+export function GuessResult({guesses}){
     return(
         <>
           <div>
-            <p>guess</p>
+            {guesses.map((guess: string, index: number) => {
+                return <p key={index}>{guess}</p>
+            })}
           </div>
         </>
     )
