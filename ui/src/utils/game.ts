@@ -57,7 +57,7 @@ const SAMPLE = (arr: string[]) => {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-const range = (start: number, end: number, step = 1) : void => {
+const range = (start: number, end?: number, step = 1) : number[] => {
 
   const output = []
 
@@ -69,6 +69,8 @@ const range = (start: number, end: number, step = 1) : void => {
   for(let i = start; i < end; i += step){
     output.push(i)
   }
+
+  return output;
 }
 
 
