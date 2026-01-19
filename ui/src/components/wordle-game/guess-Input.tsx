@@ -1,6 +1,7 @@
-import { type ChangeEvent, type SetStateAction } from "react"
+import { useState, type ChangeEvent } from "react"
 
-export function GuessInput({guess, setGuess}: {guess: string, setGuess: React.Dispatch<SetStateAction<string>>}){
+export function GuessInput(){
+      const [guess, setGuess] = useState("")
 
     function handleSubmit(e: ChangeEvent<HTMLFormElement>){
         e.preventDefault()
