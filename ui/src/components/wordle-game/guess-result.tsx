@@ -1,9 +1,12 @@
-export function GuessResult({guesses}){
+import { Guess } from "./guess"
+import { type GuessesType } from "./types"
+
+export function GuessResult({guesses}: GuessesType[]){
     return(
         <>
           <div>
-            {guesses.map((guess: string, index: number) => {
-                return <p key={index}>{guess}</p>
+            {guesses.map(({value, id}: {value: string, id: string}) => {
+                return <Guess value={value} key={id}/>
             })}
           </div>
         </>
