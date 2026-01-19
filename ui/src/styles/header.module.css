@@ -3,14 +3,14 @@
      top: 0;
      left: 0;
      right: 0;
-     width: 1300px;
+     width: 100%;
      padding: 20px;
      margin: auto;
      display: flex;
      justify-content: space-between;
      align-items: center;
      z-index: 1000;
-     background-color: hsl(0 0% 94% 0.6);
+     background-color: hsla(0, 0%, 98%, 0.6);
      backdrop-filter: blur(2px);
 }
 
