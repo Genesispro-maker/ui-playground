@@ -1,4 +1,4 @@
-export function GameOver({gameStatus, numofguesses, answer}){
+export function GameOver({gameStatus, numofguesses, answer}: {gameStatus: string, numofguesses: number, answer: string}){
    if(gameStatus === "won"){
     return (
         <div>
