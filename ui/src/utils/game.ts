@@ -73,52 +73,54 @@ const range = (start: number, end?: number, step = 1) : number[] => {
   return output;
 }
 
+function checkGuess(guess: string, answer: string) {
+  const SOLVED_CHAR = "correct"
+
+  if (!guess) {
+    return null
+  }
+
+  const guessChar = guess.toUpperCase().split("")
+  const answerChar = answer.split("")
+
+  const result: { letter: string; status: string }[] = []
 
 
-   function checkGuess(guess: string, answer: string){
-      const SOLVED_CHAR = "correct"
-
-      if(!guess){
-        return null
+  for (let i = 0; i < guessChar.length; i++) {
+    if (guessChar[i] === answerChar[i]) {
+      result[i] = {
+        letter: guessChar[i],
+        status: "correct",
       }
+      answerChar[i] = SOLVED_CHAR
+    }
+  }
 
-      const guessChar = guess.toUpperCase().split("")
-      const answerChar = answer.split("")
+  for (let i = 0; i < guessChar.length; i++) {
+    if (result[i]?.status === "correct") {
+      continue
+    }
 
-      const result = []
+    let status = "incorrect"
 
-      for(let i = 0; i < guessChar.length; i++){
-         if(guessChar[i] === answerChar[i]){
-           result[i] = {
-            letter: guessChar[i],
-            status: "correct",
-           }
-         }
-      }
+    const misplacedIndex = answerChar.findIndex(
+      (char) => char === guessChar[i]
+    )
 
+    if (misplacedIndex >= 0) {
+      status = "misplaced"
+      answerChar[misplacedIndex] = SOLVED_CHAR
+    }
 
-      for(let i = 0; i < guessChar.length; i++){
-        if(guessChar[i] === SOLVED_CHAR){
-          continue
-        }
+    result[i] = {
+      letter: guessChar[i],
+      status,
+    }
+  }
 
-        let status = "incorrect"
+  return result
+}
 
-        const misplacedIndex = answerChar.findIndex(char => char === guessChar[i])
-
-        if(misplacedIndex >= 0){
-          status = "misplaced";
-          answerChar[misplacedIndex] = SOLVED_CHAR
-        }
-
-        result[i] = {
-          letter: guessChar[i],
-          status,
-        }
-      }
-
-
-   }
 
 
 export {WORDS, NUM_OF_GUESSES, SAMPLE, range, checkGuess}
