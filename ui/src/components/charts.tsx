@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 export function Charts(){
    return (
     <>
-    <div  style={{width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}>
+    <div style={{width: '100%', maxWidth: '700px', height: '70vh', aspectRatio: 1.618 }}>
       <ResponsiveContainer width="100%" height="100%">
       <BarChart data={ChartData}
        margin={{
@@ -16,12 +16,12 @@ export function Charts(){
       >
         <CartesianGrid strokeDasharray="3, 3"/>
         <XAxis dataKey="month"/>
-        <YAxis width="auto"/>
+        <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="desktop" fill="#8884d8" activeBar={{fill: "pink", stroke: "blue"}} radius={[10, 10, 0, 0]}/>
-        <Bar dataKey="mobile" fill="#3f1e74ff" activeBar={{fill: "gold", stroke: "purple"}} radius={[10, 10, 0, 0]}/>
-        <Bar dataKey="tablet" fill="#82ca9d" activeBar={{fill: "pink", stroke: "blue"}} radius={[10, 10, 0, 0]}/>
+        <Bar dataKey="desktop" fill="#8884d8" radius={[10, 10, 0, 0]}/>
+        <Bar dataKey="mobile" fill="#3f1e74ff" radius={[10, 10, 0, 0]}/>
+        <Bar dataKey="tablet" fill="#82ca9d" radius={[10, 10, 0, 0]}/>
       </BarChart>
       </ResponsiveContainer>
       </div>
