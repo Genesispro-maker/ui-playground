@@ -11,17 +11,12 @@ export function WORDLE(){
     const [guesses, setGuesses] = useState([])
 
        function HandleGuess(guess){
-          const nextGuess = {
-            value: guess,
-            id: `${guess}-${Math.random()}`,
-          }
-
-          setGuesses([...guesses, nextGuess])
+          setGuesses([...guesses, guess])
        }
     return (
         <>
           <Header />
-          <GuessResult guesses={guesses}/>
+          <GuessResult guesses={guesses} answer={answer}/>
           <GuessInput handleGuessInput={HandleGuess}/>
         </>
     )
