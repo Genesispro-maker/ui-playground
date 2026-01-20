@@ -33,3 +33,9 @@ html{
     text-align: center;
     color: green;
 }
+
+.gameWrapper{
+    width: 400px;
+    height: 490px;
+    border: 0.3px dashed lightgrey;
+}
