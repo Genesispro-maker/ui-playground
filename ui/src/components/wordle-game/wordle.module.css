@@ -42,7 +42,34 @@ html {
 }
 
 .gameStatus{
-    width: fit-content;
-    height: fit-content;
+    width: 170px;
+    height: 30px;
     border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.gameInput{
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    border-radius: 3px;
+    border: 0.2px solid;
+    
+    &:focus{
+        outline: 1px solid lightgreen;
+    }
+}
+
+.label{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
