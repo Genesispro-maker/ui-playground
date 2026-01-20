@@ -70,6 +70,17 @@ html {
     &::placeholder{
         color: green;
         font-weight: bold;
+        padding: 20px;
+    }
+
+    &::-moz-placeholder{
+        color: green;
+        font-weight: bold;
+    }
+
+    &::-webkit-input-placeholder{
+        color: green;
+        font-weight: bold;
     }
 }
 
