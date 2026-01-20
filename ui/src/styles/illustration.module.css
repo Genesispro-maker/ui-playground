@@ -49,7 +49,7 @@
 .boxWrapper{
     max-width: 649px;
     height: 300px;
-    margin: 200px auto;
+    margin: 100px auto 20px;
     border-radius: 10px;
     border: 1px solid lightgray;
     display: flex;
