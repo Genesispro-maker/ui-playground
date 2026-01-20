@@ -14,8 +14,8 @@ export function GuessInput({handleGuessInput, gameStatus}: {handleGuessInput: an
         <>
           <form onSubmit={handleSubmit}>
             <div className={styles.formWrapper}>
-            <label className={styles.label} htmlFor="Guess">Enter Guess : </label>
-            <input className={styles.gameInput} disabled={gameStatus !== "running"} type="text" required minLength={5} maxLength={5} value={tentativeGuess} onChange={(e) => setTentativeGuess(e.target.value.toUpperCase())}/>
+            <label className={styles.label} htmlFor="gameInput">Enter Guess : </label>
+            <input className={styles.gameInput} name="Guess" id="gameInput" disabled={gameStatus !== "running"} type="text" required minLength={5} maxLength={5} value={tentativeGuess} onChange={(e) => setTentativeGuess(e.target.value.toUpperCase())}/>
             </div>
           </form>
         </>
