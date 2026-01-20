@@ -28,8 +28,8 @@ export function WORDLE(){
     return (
         <>
         <div className={styles.main}>
-            <div>
           <Header />
+        <div className={styles.gameWrapper}>
           <p>{gameStatus}</p>        
           <GuessResult guesses={guesses} answer={answer}/>
           <GuessInput handleGuessInput={HandleGuess} gameStatus={gameStatus}/>
