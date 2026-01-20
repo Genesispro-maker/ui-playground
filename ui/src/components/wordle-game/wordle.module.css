@@ -1,7 +1,12 @@
-html{
-    --lost: "red";
-    --running: "green"
+.won{
+    --status-color: green;
 }
+
+.lost{
+    --status-color: red;
+}
+
+
 
 .letter{
     width: fit-content;
@@ -24,9 +29,10 @@ html{
 .main{
     width: 500px;
     height: 500px;
-    border: 1px solid;
-    margin: auto;
+    border: 1px solid lightgray;
+    margin: 30px auto;
     border-radius: 5px;
+    padding: 20px;
 }
 
 .header{
@@ -35,7 +41,14 @@ html{
 }
 
 .gameWrapper{
-    width: 400px;
-    height: 490px;
     border: 0.3px dashed lightgrey;
+    margin: 10px auto;
+    padding: 1px 30px;
+}
+
+.gameStatus{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 2px;
+    background-color: var(--status-color);
 }
