@@ -23,7 +23,7 @@ html {
 
 .main{
     width: 500px;
-    height: 500px;
+    height: 550px;
     border: 1px solid lightgray;
     margin: 30px auto;
     border-radius: 5px;
@@ -48,7 +48,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 20px auto;
 }
 
 .formWrapper{
@@ -62,9 +62,14 @@ html {
     margin: auto;
     border-radius: 3px;
     border: 0.2px solid;
-    
+
     &:focus{
         outline: 1px solid lightgreen;
+    }
+
+    &::placeholder{
+        color: green;
+        font-weight: bold;
     }
 }
 
@@ -72,4 +77,5 @@ html {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    color: green;
 }
