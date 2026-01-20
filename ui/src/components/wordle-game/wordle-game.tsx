@@ -28,11 +28,13 @@ export function WORDLE(){
     return (
         <>
         <div className={styles.main}>
+            <div>
           <Header />
-        <p>{gameStatus}</p>
+          <p>{gameStatus}</p>        
           <GuessResult guesses={guesses} answer={answer}/>
           <GuessInput handleGuessInput={HandleGuess} gameStatus={gameStatus}/>
           {gameStatus !== "running" && <GameOver gameStatus={gameStatus} numofguesses={guesses.length} answer={answer}/>}
+          </div>
           </div>
         </>
     )
