@@ -1,12 +1,7 @@
-.won{
-    --status-color: green;
+html {
+  --color-success: hsl(130deg 100% 80%);
+  --color-error: hsl(350deg 100% 75%);
 }
-
-.lost{
-    --status-color: red;
-}
-
-
 
 .letter{
     width: fit-content;
@@ -50,5 +45,4 @@
     width: fit-content;
     height: fit-content;
     border-radius: 2px;
-    background-color: var(--status-color);
 }
