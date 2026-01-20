@@ -73,54 +73,54 @@ const range = (start: number, end?: number, step = 1) : number[] => {
   return output;
 }
 
-function checkGuess(guess: string, answer: string) {
-  const SOLVED_CHAR = "correct"
+// function checkGuess(guess: string, answer: string) {
+//   const SOLVED_CHAR = "correct"
 
-  if (!guess) {
-    return null
-  }
+//   if (!guess) {
+//     return null
+//   }
 
-  const guessChar = guess.toUpperCase().split("")
-  const answerChar = answer.split("")
+//   const guessChar = guess.toUpperCase().split("")
+//   const answerChar = answer.split("")
 
-  const result: { letter: string; status: string }[] = []
-
-
-  for (let i = 0; i < guessChar.length; i++) {
-    if (guessChar[i] === answerChar[i]) {
-      result[i] = {
-        letter: guessChar[i],
-        status: "correct",
-      }
-      answerChar[i] = SOLVED_CHAR
-    }
-  }
-
-  for (let i = 0; i < guessChar.length; i++) {
-    if (result[i]?.status === "correct") {
-      continue
-    }
-
-    let status = "incorrect"
-
-    const misplacedIndex = answerChar.findIndex(
-      (char) => char === guessChar[i]
-    )
-
-    if (misplacedIndex >= 0) {
-      status = "misplaced"
-      answerChar[misplacedIndex] = SOLVED_CHAR
-    }
-
-    result[i] = {
-      letter: guessChar[i],
-      status,
-    }
-  }
-
-  return result
-}
+//   const result: { letter: string; status: string }[] = []
 
 
+//   for (let i = 0; i < guessChar.length; i++) {
+//     if (guessChar[i] === answerChar[i]) {
+//       result[i] = {
+//         letter: guessChar[i],
+//         status: "correct",
+//       }
+//       answerChar[i] = SOLVED_CHAR
+//     }
+//   }
 
-export {WORDS, NUM_OF_GUESSES, SAMPLE, range, checkGuess}
+//   for (let i = 0; i < guessChar.length; i++) {
+//     if (result[i]?.status === "correct") {
+//       continue
+//     }
+
+//     let status = "incorrect"
+
+//     const misplacedIndex = answerChar.findIndex(
+//       (char) => char === guessChar[i]
+//     )
+
+//     if (misplacedIndex >= 0) {
+//       status = "misplaced"
+//       answerChar[misplacedIndex] = SOLVED_CHAR
+//     }
+
+//     result[i] = {
+//       letter: guessChar[i],
+//       status,
+//     }
+//   }
+
+//   return result
+// }
+
+
+
+export {WORDS, NUM_OF_GUESSES, SAMPLE, range}
