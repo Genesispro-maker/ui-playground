@@ -18,9 +18,15 @@ export function Illustration(){
               </div>
           <div className={styles.Rangewrapper}>
             <p className={styles.Text}>X : {position.x}</p>
-            <input type="range" className={styles.verticalRange} min={-100} max={100} value={position.x} onChange={(e) => setPosition({...position, x: Number(e.target.value)})}/>
+            <input type="range" className={styles.verticalRange} min={-100} max={100} value={position.x} onChange={(e) => {
+              const newPosition =  {...position, x: Number(e.target.value)}
+              setPosition(newPosition)
+            }}/>
              
-            <input type="range" min={-100} max={100} value={position.y} onChange={(e) => setPosition({...position, y: Number(e.target.value)})}/>
+            <input type="range" min={-100} max={100} value={position.y} onChange={(e) => {
+              const newPosition = {...position, y: Number(e.target.value)}
+              setPosition(newPosition)
+            }}/>
             <p className={styles.Text}>Y: {position.y}</p>
 
           </div>
