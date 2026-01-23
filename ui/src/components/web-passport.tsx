@@ -15,7 +15,7 @@ export function WebPassport(){
             {PassportColors.map((colors, index) => {
                 return (
                     <div className={styles.wrapper}>
-                       <div className={styles.colorCheck} key={index} style={{backgroundColor: colors}}></div>
+                      <input type="radio" key={index} style={{accentColor: colors}}/>
                     </div>
                 )
             })}
