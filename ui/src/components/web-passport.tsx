@@ -1,5 +1,5 @@
 import { type PassportType } from "../types/passport";
-
+import styles from "../styles/passport.module.css"
 
 const PassportColors: PassportType = [
     "#FF0000",
@@ -12,11 +12,13 @@ const PassportColors: PassportType = [
 export function WebPassport(){
     return (
         <>
-          <div>
             {PassportColors.map((colors, index) => {
-                return <div key={index} style={{backgroundColor: colors}}></div>
+                return (
+                    <div className={styles.wrapper}>
+                       <div className={styles.colorCheck} key={index} style={{backgroundColor: colors}}></div>
+                    </div>
+                )
             })}
-          </div>
         </>
     )
 }
