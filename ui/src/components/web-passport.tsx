@@ -12,13 +12,24 @@ const PassportColors: PassportType = [
 export function WebPassport(){
     return (
         <>
+        <div className={styles.wrapper}>
             {PassportColors.map((colors, index) => {
                 return (
-                    <div className={styles.wrapper}>
+                    <div>
                       <input type="radio" key={index} style={{accentColor: colors}}/>
                     </div>
                 )
             })}
+
+
+            <main>
+                <div className={styles.cardWrapper}>
+                    <div>
+                        <p>Motion web passport</p>
+                    </div>
+                </div>
+            </main>
+            </div>
         </>
     )
 }
