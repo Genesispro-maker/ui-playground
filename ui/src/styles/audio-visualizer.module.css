@@ -1,7 +1,35 @@
 .wrapper{
     width: 300px;
     height: 70px;
-    border: 0.3px solid lightgray;
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box, linear-gradient(
+    210deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(247deg 100% 21%) 4%,
+    hsl(255deg 100% 23%) 8%,
+    hsl(262deg 100% 24%) 13%,
+    hsl(269deg 100% 25%) 17%,
+    hsl(276deg 100% 26%) 21%,
+    hsl(284deg 100% 27%) 25%,
+    hsl(291deg 100% 29%) 29%,
+    hsl(298deg 100% 30%) 33%,
+    hsl(306deg 100% 31%) 37%,
+    hsl(313deg 100% 33%) 42%,
+    hsl(320deg 100% 34%) 46%,
+    hsl(327deg 100% 35%) 50%,
+    hsl(335deg 100% 36%) 54%,
+    hsl(342deg 100% 37%) 58%,
+    hsl(349deg 100% 39%) 63%,
+    hsl(357deg 100% 40%) 67%,
+    hsl(4deg 100% 41%) 71%,
+    hsl(11deg 100% 43%) 75%,
+    hsl(19deg 100% 44%) 79%,
+    hsl(26deg 100% 45%) 83%,
+    hsl(33deg 100% 46%) 87%,
+    hsl(40deg 100% 47%) 92%,
+    hsl(48deg 100% 49%) 96%,
+    hsl(55deg 100% 50%) 100%
+  ) border-box;
     margin: 10px auto;
     border-radius: 5px;
     position: relative;
