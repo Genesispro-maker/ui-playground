@@ -34,7 +34,7 @@ export function Illustration(){
               setPosition(newPosition)
             }}/>
 
-            <p className={styles.value} role="horizontalValue">Y: {position.y}</p>
+            <p className={styles.value} role="horizontalValue">Y : {position.y}</p>
 
           </div>
           </main>
