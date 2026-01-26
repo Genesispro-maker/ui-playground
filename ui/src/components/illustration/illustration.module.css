@@ -1,5 +1,17 @@
 @import "../../assets/font.css";
 
+
+.wrapper{
+    max-width: 649px;
+    height: 300px;
+    margin: 100px auto 20px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
 .BoxWrap{
   flex: 3;
 }
@@ -24,16 +36,7 @@
     position: relative;
 }
 
-.boxWrapper{
-    max-width: 649px;
-    height: 300px;
-    margin: 100px auto 20px;
-    border-radius: 10px;
-    border: 1px solid lightgray;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-}
+
 
 .valuesWrapper{
   margin: 10px auto;
@@ -44,7 +47,7 @@
   border-radius: 3px;
 }
 
-.value[role = "verticalValue"]{
+.value[data-axis = "x"]{
   font-family: "Doto", sans-serif;
   font-weight: bolder;
   position: absolute;
@@ -52,7 +55,7 @@
   left: 60px;
 }
 
-.value[role = "horizontalValue"]{
+.value[data-axis = "y"]{
    font-family: "Doto", sans-serif;
   font-weight: bolder;
   position: absolute;
@@ -60,13 +63,13 @@
   right: 60px;
 }
 
-.input[role = 'verticalInputcontrol']{
+.input:first-of-type{
   position: absolute;
   left: 20px;
   top: 50px;
 }
 
-.input[role = "horizontalInputcontrol"]{
+.input:last-of-type{
   position: absolute;
   right: 20px;
   top: 50px;
