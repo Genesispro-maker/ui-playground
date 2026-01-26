@@ -47,7 +47,7 @@
   border-radius: 3px;
 }
 
-.value[data-axis = "x"]{
+.value:first-of-type{
   font-family: "Doto", sans-serif;
   font-weight: bolder;
   position: absolute;
@@ -55,7 +55,7 @@
   left: 60px;
 }
 
-.value[data-axis = "y"]{
+.value:last-of-type{
    font-family: "Doto", sans-serif;
   font-weight: bolder;
   position: absolute;
@@ -73,4 +73,12 @@
   position: absolute;
   right: 20px;
   top: 50px;
+}
+
+
+@media (min-width: 350px) and (max-width: 500px) and (orientation: portrait){
+  .wrapper{
+     max-width: 100%;
+     border-radius: none;
+  }
 }
