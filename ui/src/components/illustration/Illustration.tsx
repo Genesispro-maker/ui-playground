@@ -6,7 +6,7 @@ export function Illustration(){
 
     return(
         <>
-        <main className={styles.boxWrapper}>
+        <main className={styles.wrapper}>
 
           <div className={styles.BoxWrap}>
 
@@ -22,19 +22,19 @@ export function Illustration(){
 
           <div className={styles.Rangewrapper}>
 
-            <p className={styles.value} role="verticalValue">X : {position.x}</p>
+            <p className={styles.value} role="text">X : {position.x}</p>
 
-            <input type="range" role="verticalInputcontrol" className={styles.input} min={-100} max={100} value={position.x} onChange={(e) => {
+            <input type="range" role="slider" aria-label="Horizontal Position" className={styles.input} min={-100} max={100} value={position.x} onChange={(e) => {
               const newPosition =  {...position, x: Number(e.target.value)}
               setPosition(newPosition)
             }}/>
              
-            <input className={styles.input} role="horizontalInputcontrol" type="range" min={-100} max={100} value={position.y} onChange={(e) => {
+            <input className={styles.input} aria-label="Vertical Position" role="slider" type="range" min={-100} max={100} value={position.y} onChange={(e) => {
               const newPosition = {...position, y: Number(e.target.value)}
               setPosition(newPosition)
             }}/>
 
-            <p className={styles.value} role="horizontalValue">Y : {position.y}</p>
+            <p className={styles.value} role="text">Y : {position.y}</p>
 
           </div>
           </main>
