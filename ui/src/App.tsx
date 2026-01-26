@@ -1,6 +1,6 @@
 import { AudioVisualizer } from "./components/apple-music-player/audio-visualizer";
 import { useMorph } from "./utils/morph";
-import { Header } from "./components/header";
+import { Header } from "./components/header/header";
 import { Illustration } from "./components/illustration/Illustration";
 import { WebPassport } from "./components/passport/web-passport";
 
@@ -14,8 +14,8 @@ function App(){
    return (
     <>
      <Header />
-     <div>
-        <h3>welcome to my {Textdata[morph]}</h3>
+     <div className="herotext">
+        <h3>welcome to my <span>{Textdata[morph]}</span></h3>
      </div>
      <Illustration />
      <AudioVisualizer />
