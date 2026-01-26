@@ -1,16 +1,15 @@
-import { AudioVisualizer } from "./components/audio-visualizer";
+import { AudioVisualizer } from "./components/apple-music-player/audio-visualizer";
 
 import { Header } from "./components/header";
-import { Illustration } from "./components/Illustration";
-import { WebPassport } from "./components/web-passport";
-import { WORDLE } from "./components/wordle-game/wordle-game";
+import { Illustration } from "./components/illustration/Illustration";
+import { WebPassport } from "./components/passport/web-passport";
+
 function App(){
    return (
     <>
      <Header />
      <Illustration />
      <AudioVisualizer />
-     <WORDLE />
      <WebPassport />
     </>
    )
