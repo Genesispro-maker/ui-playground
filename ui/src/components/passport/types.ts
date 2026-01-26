@@ -1,0 +1,1 @@
+export type PassportType = Array<string>
