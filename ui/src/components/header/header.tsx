@@ -9,7 +9,7 @@ export const Header = () => {
     <Fragment>
          <header className={styles.header}>
             <h2 className={styles.heading}>UI PLAY</h2>
-              <a href="https://github.com/Genesispro-maker/" className={styles.link}>
+              <a href="https://github.com/Genesispro-maker/" className={styles.link} role="link" aria-label="link">
                  <Github size={25} fill="none" className={styles.github}/>
               </a> 
          </header>
