@@ -37,6 +37,7 @@ html{
 body{
     background-color: var(--bg-color);
     padding: 30px;
+    overflow-x: hidden;
 }
 
 .herotext{
@@ -44,6 +45,15 @@ body{
   text-align: center;
   font-size: 2rem;
   margin: 10px;
-  font-family: "Dancing Script", sans-serif;
-  font-size: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
 }
+
+.herotext span{
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 500;
+}
+
+  .iconImg{
+    vertical-align: baseline;
+  }
