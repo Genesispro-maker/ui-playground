@@ -13,7 +13,7 @@
    background: none;
 }
 .github{
-    stroke: black;
+    stroke: white;
 
     &:hover{
         stroke: blue;
