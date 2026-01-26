@@ -1,0 +1,40 @@
+@import "../../assets/font.css";
+
+.header{
+     width: 1300px;
+     padding: 20px;
+     margin: auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.heading{
+    font-family: "Doto", sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+.link{
+   background: none;
+}
+.github{
+    stroke: white;
+
+    &:hover{
+        stroke: blue;
+    }
+}
+
+
+
+
+@media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
+    .header{
+        width: 500px;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
