@@ -60,6 +60,13 @@ body{
   float: left;
 }
 
+.UI{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: hsla(243 82% 46.3% / 0.38);
+}
+
 @media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
   .herotext{
     display: inline-block;
