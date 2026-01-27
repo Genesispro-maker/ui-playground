@@ -1,37 +1,34 @@
-import { FastForward, Pause, Play, Rewind } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { FastForward, Pause, Play, Rewind, Speaker } from "lucide-react"
+import { useRef, useState } from "react"
 import styles from './audio-visualizer.module.css'
-import { useFormat } from "../../utils/format"
+import { formatTime } from "../../utils/format"
+import { useDevice } from "../../utils/useDevice"
+
+
+
 export const ApplePlayer = () => {
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState<number>(0)
     const [duration, setDuration] = useState<number>(0)
     const audioRef = useRef<HTMLAudioElement | null>(null)
     const SourceRef = useRef<MediaElementAudioSourceNode | null>(null)
-    const Audiocontext = useRef<AudioContext | null>(null)
-
-
-    useEffect(() => {
-        if(!audioRef.current){
-            return
-        }
-
-        const audioTimeUpdate = () =>  {
-            setCurrentTime(audioRef.current!.currentTime)
-        }
-
-        audioRef.current.addEventListener("timeupdate", audioTimeUpdate)
-
-        return () => {
-            audioRef.current?.removeEventListener("timeupdate", audioTimeUpdate)
-        }
-    }, [])
-    
+    const Audiocontext = useRef<AudioContext | null>(null)  
+    const device = useDevice()
+    console.log(device)
 
    async function play(){
        if (!audioRef.current) {
          audioRef.current = new Audio()
            audioRef.current.src = "/audio/plenty.mp3"
+
+    audioRef.current.addEventListener("loadedmetadata", () => {
+      console.log("Duration loaded:", audioRef.current!.duration);
+      setDuration(audioRef.current!.duration);
+    });
+
+     audioRef.current.addEventListener("timeupdate", () => {
+        setCurrentTime(audioRef.current!.currentTime);
+      });
 
         
 
@@ -54,9 +51,7 @@ export const ApplePlayer = () => {
            else{
             await audioRef.current.play()
            }
-
            setPlaying(!playing)
-           setDuration(audioRef.current!.duration)
     }
     return (
         <>
@@ -75,18 +70,21 @@ export const ApplePlayer = () => {
                 <div></div>
             </div>
             <div className={styles.timers}>
-                <p>{useFormat(currentTime)}</p>
-                <p>{useFormat(duration)}</p>
+                <p>{formatTime(currentTime)}</p>
+                <p>- {formatTime(duration - currentTime)}</p>
+            </div>
+
+            <div className={styles.controls}>
+                <button className={styles.rewindbutton}><Rewind className={styles.rewind}/></button>
+                <button className={styles.playbutton} onClick={play}>{playing ? <Pause className={styles.pause}/> : <Play className={styles.play}/>}</button>
+                <button className={styles.fastforwardbutton}><FastForward className={styles.fastforward}/></button>
             </div>
 
             <div>
-                <button className={styles.fastforward}><Rewind /></button>
-                <button>{playing ? <Pause /> : <Play />}</button>
-                <button><FastForward /></button>
+                <Speaker />
             </div>
             </div>
         </main>
-          {/* <button style={{backgroundColor: "white"}} onClick={play}>{playing ? <Pause /> : <Play />}</button> */}
         </>
     )
 }
