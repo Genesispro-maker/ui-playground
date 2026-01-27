@@ -78,7 +78,34 @@
 
 @media (min-width: 350px) and (max-width: 500px) and (orientation: portrait){
   .wrapper{
-     max-width: 100%;
-     border-radius: none;
+     width: 100%;
+     border-radius: 0;
+     border-top: 3px solid lightgray;
+     border-right: none;
+     border-left: none;
+     height: 300px;
+     overflow: none;
+     border-bottom: 3px solid lightgray;
+  }
+
+  .Rangewrapper{
+    width: 100vw;
+
+  }
+
+  .value:first-of-type{
+    left: 20px;
+  }
+
+  .value.value:last-of-type{
+    right: 20px;
+  }
+
+  .input:first-of-type{
+    left: 15px;
+  }
+
+  .input:last-of-type{
+    right: 15px;
   }
 }
