@@ -13,7 +13,7 @@ function App(){
     <>
      <Header />
      <div className="herotext">
-        <h3>welcome to my <span style={{color: TextData[morph].color}}><img src={TextData[morph].icon} alt={TextData[morph].text} width={50} height={50}/> {TextData[morph].text}</span> where i put my UI <span className="engineering">engineering</span> skills to work</h3>
+        <h3>welcome to my <span style={{color: TextData[morph].color}}><img src={TextData[morph].icon} alt={TextData[morph].text} width={50} height={50}/> {TextData[morph].text}</span> where i put my UI engineering skills to work</h3>
      </div>
      <Illustration />
      <AudioVisualizer />
