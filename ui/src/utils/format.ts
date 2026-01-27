@@ -1,10 +1,10 @@
-  export function useFormat(time: number){
-      if(isNaN(time)) return
+export function formatTime(time: number): string {
+  if (isNaN(time)) return "0:00";
 
-      const sign = time < 0 ? "-" : ""
-      const abs = Math.abs(time)
-      const min = Math.floor(abs / 60)
-      const sec = Math.floor(abs % 60)
+  const abs = Math.abs(time);
 
-      return `${sign}${min}:${sec.toString().padStart(2, "0")}`
-    }
+  const min = Math.floor(abs / 60);
+  const sec = Math.floor(abs % 60);
+
+  return `${min}:${sec.toString().padStart(2, "0")}`;
+}
