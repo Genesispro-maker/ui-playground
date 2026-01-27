@@ -36,7 +36,6 @@ html{
 
 body{
     background-color: var(--bg-color);
-    padding: 30px;
     overflow-x: hidden;
 }
 
@@ -47,13 +46,35 @@ body{
   margin: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: lighter;
+  display: inline-block;
 }
 
 .herotext span{
   font-family: "Dancing Script", sans-serif;
   font-weight: 500;
+  display: inline-block;
 }
 
-  .iconImg{
-    vertical-align: baseline;
+.herotext img{
+  vertical-align: middle;
+  float: left;
+}
+
+@media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
+  .herotext{
+    display: inline-block;
+    font-size: 1.5rem;
   }
+
+  .herotext span{
+    display: inline-block;
+  }
+
+  .herotext img{
+    vertical-align: middle;
+    float: left;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+  }
+}
