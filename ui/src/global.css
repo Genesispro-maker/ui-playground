@@ -60,11 +60,15 @@ body{
   float: left;
 }
 
-.UI{
-  display: block;
-  width: 20px;
-  height: 20px;
+.engineering{
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  text-align: center;
   background-color: hsla(243 82% 46.3% / 0.38);
+  border-radius: 3px;
 }
 
 @media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
