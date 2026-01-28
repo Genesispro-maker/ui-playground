@@ -67,7 +67,7 @@ export const ApplePlayer = () => {
             <p className={styles.name}>Burna Boy</p>
 
             <div className={styles.parent}>
-                <div></div>
+                <div className={styles.child} style={{width: duration ? `${(currentTime / duration) * 100}%` : "0%",}}></div>
             </div>
             <div className={styles.timers}>
                 <p>{formatTime(currentTime)}</p>
@@ -75,9 +75,13 @@ export const ApplePlayer = () => {
             </div>
 
             <div className={styles.controls}>
+
                 <button className={styles.rewindbutton}><Rewind className={styles.rewind}/></button>
+
                 <button className={styles.playbutton} onClick={play}>{playing ? <Pause className={styles.pause}/> : <Play className={styles.play}/>}</button>
+
                 <button className={styles.fastforwardbutton}><FastForward className={styles.fastforward}/></button>
+                
             </div>
 
             <div>
