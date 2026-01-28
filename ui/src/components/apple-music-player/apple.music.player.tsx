@@ -52,6 +52,11 @@ export const ApplePlayer = () => {
             await audioRef.current.play()
            }
            setPlaying(!playing)
+
+
+           audioRef.current.addEventListener("ended", function() {
+              setPlaying(false)
+           })
     }
     return (
         <>
@@ -78,10 +83,10 @@ export const ApplePlayer = () => {
 
                 <button className={styles.rewindbutton}><Rewind className={styles.rewind}/></button>
 
-                <button className={styles.playbutton} onClick={play}>{playing ? <Pause className={styles.pause}/> : <Play className={styles.play}/>}</button>
+                <button className={styles.playbutton} onClick={play}>{playing ? <div style={{ filter: playing ? "blur(0px)" : "blur(10px)", transform: playing ? "scale(1)" : "scale(0.25)", opacity: playing ? 1 : 0, transition: "opacity 0.3s ease-in-out, filter 0.3s ease-in-out, transform 0.3s ease-in-out"}}><Pause className={styles.pause}/></div> : <div style={{transform: "scale(0.25)", filter: "blur(10px)",  opacity: playing ? 0 : 1, transition: "filter transform opacity 0.5s ease"}}><Play className={styles.play}/></div>}</button>
 
                 <button className={styles.fastforwardbutton}><FastForward className={styles.fastforward}/></button>
-                
+
             </div>
 
             <div>
