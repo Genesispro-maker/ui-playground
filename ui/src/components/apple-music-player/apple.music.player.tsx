@@ -14,6 +14,8 @@ export const ApplePlayer = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null)
     const SourceRef = useRef<MediaElementAudioSourceNode | null>(null)
     const Audiocontext = useRef<AudioContext | null>(null)  
+
+    
     const device = useDevice()
     console.log(device)
 
@@ -128,7 +130,8 @@ export const ApplePlayer = () => {
             </div>
 
             <div>
-                <Speaker />
+                <Speaker className={styles.speaker}/>
+                 {device.length > 0 && <p>{device[1].label}</p>}
             </div>
             </div>
         </main>
