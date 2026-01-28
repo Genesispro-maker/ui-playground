@@ -9,6 +9,7 @@ import { useDevice } from "../../utils/useDevice"
 export const ApplePlayer = () => {
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState<number>(0)
+    const [rewind, setRewind] = useState(false)
     const [duration, setDuration] = useState<number>(0)
     const audioRef = useRef<HTMLAudioElement | null>(null)
     const SourceRef = useRef<MediaElementAudioSourceNode | null>(null)
@@ -81,11 +82,48 @@ export const ApplePlayer = () => {
 
             <div className={styles.controls}>
 
-                <button className={styles.rewindbutton}><Rewind className={styles.rewind}/></button>
+                <button onClick={() => {
+                  if(!audioRef.current) return
 
-                <button className={styles.playbutton} onClick={play}>{playing ? <div style={{ filter: playing ? "blur(0px)" : "blur(10px)", transform: playing ? "scale(1)" : "scale(0.25)", opacity: playing ? 1 : 0, transition: "opacity 0.3s ease-in-out, filter 0.3s ease-in-out, transform 0.3s ease-in-out"}}><Pause className={styles.pause}/></div> : <div style={{transform: "scale(0.25)", filter: "blur(10px)",  opacity: playing ? 0 : 1, transition: "filter transform opacity 0.5s ease"}}><Play className={styles.play}/></div>}</button>
+                  audioRef.current.currentTime -= 10
+                  setCurrentTime(audioRef.current.currentTime)
+                  setRewind(!rewind)
+                }} className={styles.rewindbutton}><Rewind className={styles.rewind}/></button>
 
-                <button className={styles.fastforwardbutton}><FastForward className={styles.fastforward}/></button>
+              <button style={{position: "relative"}} className={styles.playbutton} onClick={play}>
+               
+               <div style={{
+                   position: "absolute",
+                   opacity: playing ? 1 : 0,
+                   transform: playing ? "scale(1)" : "scale(0.25)",
+                   filter: playing ? "blur(0px)" : "blur(10px)",
+                   transition: "all 0.3s ease-in-out",
+             }}>
+                <Pause className={styles.pause} />
+
+               </div>
+
+              <div style={{
+                   position: "absolute",
+                   opacity: playing ? 0 : 1,
+                   transform: playing ? "scale(0.25)" : "scale(1)",
+                   filter: playing ? "blur(10px)" : "blur(0px)",
+                   transition: "all 0.3s ease-in-out",
+              }}>
+                 <Play className={styles.play} />
+
+              </div>
+
+             </button>
+
+                <button onClick={() => {
+                    if (!audioRef.current) return
+
+                  audioRef.current.currentTime += 10
+                  setCurrentTime(audioRef.current.currentTime)
+
+                  Audiocontext.current?.resume()
+                }} className={styles.fastforwardbutton}><FastForward className={styles.fastforward}/></button>
 
             </div>
 
