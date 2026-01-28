@@ -2,7 +2,6 @@ import { ApplePlayer } from "./components/apple-music-player/apple.music.player"
 import { useMorph } from "./utils/morph";
 import { Header } from "./components/header/header";
 import { Illustration } from "./components/illustration/Illustration";
-import { WebPassport } from "./components/passport/web-passport";
 import { TextData } from "./utils/data";
 
 
@@ -17,7 +16,6 @@ function App(){
      </div>
      <Illustration />
      <ApplePlayer />
-     <WebPassport />
     </>
    )
 }
