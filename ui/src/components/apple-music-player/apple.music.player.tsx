@@ -84,7 +84,7 @@ export const ApplePlayer = () => {
 
             <div className={styles.controls}>
 
-                <button onClick={() => {
+                <button aria-label="rewind" role="button" onClick={() => {
                   if(!audioRef.current) return
 
                   audioRef.current.currentTime -= 10
@@ -92,7 +92,7 @@ export const ApplePlayer = () => {
                   setRewind(!rewind)
                 }} className={styles.rewindbutton}><Rewind className={styles.rewind}/></button>
 
-              <button style={{position: "relative"}} className={styles.playbutton} onClick={play}>
+              <button aria-label="Play and Pause" role="button" style={{position: "relative"}} className={styles.playbutton} onClick={play}>
                
                <div style={{
                    position: "absolute",
@@ -118,20 +118,20 @@ export const ApplePlayer = () => {
 
              </button>
 
-                <button onClick={() => {
+                <button aria-label="FastForward" onClick={() => {
                     if (!audioRef.current) return
 
                   audioRef.current.currentTime += 10
                   setCurrentTime(audioRef.current.currentTime)
 
                   Audiocontext.current?.resume()
-                }} className={styles.fastforwardbutton}><FastForward className={styles.fastforward}/></button>
+                }} className={styles.fastforwardbutton} role="button"><FastForward className={styles.fastforward}/></button>
 
             </div>
 
-            <div>
-                <Speaker className={styles.speaker}/>
-                 {device.length > 0 && <p>{device[1].label}</p>}
+            <div className={styles.audiodetails}>
+                <div role="icon"><Speaker className={styles.speaker}/></div>
+                 {device.length > 0 && <p role="text" className={styles.speakername}>{device[1].label.slice(28, -1)}</p>}
             </div>
             </div>
         </main>
