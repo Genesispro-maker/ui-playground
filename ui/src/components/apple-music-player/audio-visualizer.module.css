@@ -74,7 +74,7 @@
     border: none;
 }
 
-.rewind, .fastforward, .play, .pause{
+.rewind, .speaker .fastforward, .play, .pause{
    stroke: white;
    fill: white;
 }
@@ -87,6 +87,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.audio
 
 
 
