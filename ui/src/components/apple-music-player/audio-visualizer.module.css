@@ -1,6 +1,6 @@
 .wrapper{
     width: 300px;
-    height: 500px;
+    height: 550px;
     border: 1px solid rgb(75, 74, 74);
     margin: 50px auto;
     border-radius: calc(10px + 20px);
@@ -77,6 +77,15 @@
 .rewind, .fastforward, .play, .pause{
    stroke: white;
    fill: white;
+}
+
+.playbutton{
+    position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
