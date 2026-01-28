@@ -12,7 +12,7 @@ export const useMorph = (TextData: Array<TextDataType>) => {
         return () => {
             window.clearInterval(textMorphInterval)
         }
-    }, [index, TextData])
+    }, [TextData])
 
     return index
 }
