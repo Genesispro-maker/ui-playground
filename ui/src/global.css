@@ -63,7 +63,6 @@ body{
   float: left;
 }
 
-
 @media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
   .herotext{
     display: inline-block;
