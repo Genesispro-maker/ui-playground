@@ -2,7 +2,7 @@ import { FastForward, Pause, Play, Rewind, Speaker } from "lucide-react"
 import { useRef, useState } from "react"
 import styles from './audio-visualizer.module.css'
 import { formatTime } from "../../utils/format"
-import { useDevice } from "../../utils/useDevice"
+
 
 
 
@@ -14,10 +14,6 @@ export const ApplePlayer = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null)
     const SourceRef = useRef<MediaElementAudioSourceNode | null>(null)
     const Audiocontext = useRef<AudioContext | null>(null)  
-
-    
-    const device = useDevice()
-    console.log(device)
 
    async function play(){
        if (!audioRef.current) {
@@ -128,13 +124,10 @@ export const ApplePlayer = () => {
                 }} className={styles.fastforwardbutton} role="button"><FastForward className={styles.fastforward}/></button>
 
             </div>
+            
+            </div>
 
-            <div className={styles.audiodetails}>
-                <div role="icon"><Speaker className={styles.speaker}/></div>
-                 {device.length > 0 && <p role="text" className={styles.speakername}>{device[1].label.slice(28, -1)}</p>}
-            </div>
-            </div>
-        </main>
+            </main>
         </>
     )
 }
