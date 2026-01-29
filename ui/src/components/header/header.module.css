@@ -12,7 +12,7 @@
 .heading{
     font-family: "Doto", sans-serif;
     font-weight: 900;
-    color: white;
+    color: var(--font-color);
     user-select: none;
 }
 
@@ -20,11 +20,26 @@
    background: none;
 }
 .github{
-    stroke: white;
+    stroke: var(--font-color);
 
     &:hover{
         stroke: blue;
     }
+}
+
+.themeButtonWrapper{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+.themeButton{
+    background: none;
+    border: none;
+}
+
+.themeIcon{
+    stroke: var(--font-color);
 }
 
 
