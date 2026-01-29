@@ -93,7 +93,7 @@
     width: 200px;
     margin: 20px auto 0px;
     border-radius: 20px;
-    background-color: rgb(31, 30, 30);
+    background-color: var(--bg-color);
     padding: 5px;
     display: flex;
     justify-content: space-around;
