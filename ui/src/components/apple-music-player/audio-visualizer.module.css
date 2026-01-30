@@ -28,20 +28,20 @@
 .title{
     font-weight: bolder;
     font-size: 1rem;
-    color: white;
+    color: var(--font-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .name{
     font-size: 0.8rem;
-    color: white;
+    color: var(--font-color);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 5px;
 }
 
 .parent{
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--parent);
     backdrop-filter: blur(10px);
     height: 8px;
     margin-top: 20px;
@@ -51,7 +51,7 @@
 .child{
     width: 0;
     height: 8px;
-    background-color: white;
+    background-color: var(--child);
     border-radius: calc(5px + 0px);
 }
 
@@ -61,7 +61,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
-    color: white;
+    color: var(--timers);
 }
 
 .controls{
@@ -76,12 +76,12 @@
 }
 
 .rewind, .fastforward, .play, .pause{
-   stroke: white;
-   fill: white;
+   stroke: var(--stroke);
+   fill: var(--fill);
 }
 
 .playbutton{
-    position: relative;
+  position: relative;
   width: 48px;
   height: 48px;
   display: flex;
