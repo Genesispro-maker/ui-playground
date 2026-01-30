@@ -1,4 +1,4 @@
-import { FastForward, Pause, Play, Rewind, Speaker } from "lucide-react"
+import { FastForward, Pause, Play, Rewind } from "lucide-react"
 import { useRef, useState } from "react"
 import styles from './audio-visualizer.module.css'
 import { formatTime } from "../../utils/format"
@@ -121,7 +121,7 @@ export const ApplePlayer = () => {
                   setCurrentTime(audioRef.current.currentTime)
 
                   Audiocontext.current?.resume()
-                }} className={styles.fastforwardbutton} role="button"><FastForward className={styles.fastforward}/></button>
+                }}  style={{transform: `translateX(${currentTime})`, transition: "transform 0.5ms ease"}} className={styles.fastforwardbutton} role="button"><FastForward className={styles.fastforward}/></button>
 
             </div>
             
