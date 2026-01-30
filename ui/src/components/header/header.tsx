@@ -1,18 +1,18 @@
 import { Github, Moon, Sun } from "lucide-react"
 import { Fragment } from "react/jsx-runtime"
 import styles from "./header.module.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
 
 export const Header = () => {
-  const [theme, setThemeState] = useState("dark")
+  const [theme, setTheme] = useState("dark")
   
-function setTheme(theme: "light" | "dark"){
+function setThemeState(theme: "light" | "dark"){
   document.body.setAttribute("data-theme", theme)
 
-  setThemeState(theme)
+  setTheme(theme)
 
 
   localStorage.setItem("theme", theme)
@@ -22,8 +22,20 @@ function setTheme(theme: "light" | "dark"){
 
 function toggleTheme(){
    const newTheme = theme === "light" ? "dark" : "light"
-   setTheme(newTheme)
-}
+   setThemeState(newTheme)
+}   
+
+    useEffect(() => {
+      (() => {
+        const savedTheme = localStorage.getItem("theme")
+        if(savedTheme === "light" || savedTheme === "dark"){
+          setThemeState(savedTheme)
+        }
+        else{
+          setThemeState("dark")
+        }
+      })()
+    }, [])
 
   return (
     <Fragment>
