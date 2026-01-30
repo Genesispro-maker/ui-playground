@@ -25,11 +25,21 @@
 [data-theme = "dark"]{
   --bg-color: #111110;
   --font-color: white;
+  --stroke: white;
+  --fill: white;
+  --timers: white;
+  --parent: rgba(255, 255, 255, 0.2);
+  --child: white;
 }
 
 [data-theme = "light"]{
   --bg-color: #ffff;
   --font-color: black;
+  --stroke: black;
+  --fill: black;
+  --timers: black;
+  --parent: lightgray;
+  --child: gray;
 }
 
 
