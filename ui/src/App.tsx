@@ -45,7 +45,7 @@ function App(){
      </div>
      <Illustration />
      <ApplePlayer />
-     <button onClick={handleIsOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
+     <button className="drawerButton" onClick={handleIsOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
      {isOpen && <Drawer handleClose={handleIsOpen} initialValue={0}/>}
     </>
    )
