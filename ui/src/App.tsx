@@ -24,9 +24,8 @@ function App(){
      <Header />
      <Illustration />
      <AudioVisualizer />
-     {isOpen && <Drawer initialValue={0}/>}
-
      <button onClick={handleIsOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
+     {isOpen && <Drawer initialValue={0}/>}
     </>
    )
 }
