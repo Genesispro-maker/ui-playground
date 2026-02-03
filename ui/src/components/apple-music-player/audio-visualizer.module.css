@@ -1,7 +1,7 @@
 .wrapper{
     width: 300px;
     height: 550px;
-    border: 1px solid rgb(75, 74, 74);
+    border: 2px solid  gray;
     margin: 50px auto;
     border-radius: calc(10px + 20px);
     position: relative;
