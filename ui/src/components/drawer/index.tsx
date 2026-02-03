@@ -21,14 +21,13 @@ export const Drawer = ({initialValue} : {initialValue: number}) => {
 
    return createPortal(
       <div>
-         <div>
+         <div />
             <h1>{formattedPrice}</h1>
 
             <div>
                 <button onClick={Increment}><Plus /></button>
                 <button onClick={Decrement}><Minus /></button>
             </div>
-         </div>
       </div>,
        document.querySelector("#drawer-root")!
 )
