@@ -1,6 +1,7 @@
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import styles from './drawer.module.css'
 
 export const Drawer = ({initialValue} : {initialValue: number}) => {
    const [Amount, setAmount] = useState(initialValue)
@@ -20,7 +21,7 @@ export const Drawer = ({initialValue} : {initialValue: number}) => {
     }
 
    return createPortal(
-      <div>
+      <div className=>
          <div />
             <h1>{formattedPrice}</h1>
 
