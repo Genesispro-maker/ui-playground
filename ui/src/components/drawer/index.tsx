@@ -2,9 +2,10 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 import styles from './drawer.module.css'
 import { createPortal } from "react-dom";
+import { X } from "lucide-react";
 
 
-export const Drawer = ({initialValue} : {initialValue: number}) => {
+export const Drawer = ({initialValue, handleClose} : {initialValue: number}) => {
    const [Amount, setAmount] = useState(initialValue)
 
     const formattedPrice = new Intl.NumberFormat("en-US", {
@@ -30,6 +31,8 @@ export const Drawer = ({initialValue} : {initialValue: number}) => {
           <button onClick={Increment}><Plus /></button>
           <button onClick={Decrement}><Minus /></button>
           </div>
+
+          <button onClick={handleClose}><X /> close</button>
         </div>
     </div>, document.querySelector("#drawer")!
 )
