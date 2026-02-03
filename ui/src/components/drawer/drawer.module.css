@@ -103,6 +103,20 @@
   border-radius: 5px;
 }
 
+.closeButton{
+  display: flex;
+  margin: auto;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--drawer-text-color);
+  background: transparent;
+  color: var(--drawer-text-color);
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 
 
 @keyframes slide-in{
