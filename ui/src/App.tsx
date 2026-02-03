@@ -46,7 +46,7 @@ function App(){
      <Illustration />
      <ApplePlayer />
      <button onClick={handleIsOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
-     {isOpen && <Drawer initialValue={0}/>}
+     {isOpen && <Drawer handleClose={handleIsOpen} initialValue={0}/>}
     </>
    )
 }
