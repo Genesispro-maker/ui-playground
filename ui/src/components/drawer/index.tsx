@@ -39,7 +39,7 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number}) => 
 
           </div>
 
-          <button onClick={handleClose}><X />close</button>
+          <button className={styles.closeButton} onClick={handleClose}><X />close</button>
 
         </div>
     </div>, document.querySelector("#drawer")!
