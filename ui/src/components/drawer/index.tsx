@@ -1,18 +1,6 @@
 import { Minus, Plus } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
-
-function useToggle(){
-    const [toggle, setToggle] = useState(false)
-
-
-    const handleToggleOpen = useCallback(() => {
-        setToggle((currentToggle) => !currentToggle)
-    },  [])
-
-    return [toggle, handleToggleOpen]
-}
-
 
 export const Drawer = ({initialValue} : {initialValue: number}) => {
    const [Amount, setAmount] = useState(initialValue)
