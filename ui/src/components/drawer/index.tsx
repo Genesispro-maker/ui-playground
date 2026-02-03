@@ -24,14 +24,7 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number, hand
         setAmount((amount) => amount - 1)
     }
 
-    useEffect(() => {
-        function Animate(){
-            wrapperRef.current?.animate([{transform: "translateY(0%)"}], {duration: 1000, easing: "ease-in-out"})
-        }
-
-
-        wrapperRef.current?.addEventListener("click", Animate)
-    })
+   
    return createPortal(
        <div ref={wrapperRef} className={styles.wrapper}>
 
