@@ -24,11 +24,13 @@ export const Drawer = ({initialValue} : {initialValue: number}) => {
    return createPortal(
        <div className={styles.wrapper}>
       <div className={styles.drawer}>
-        <div className={styles.random}></div>
-          <h1>{formattedPrice}</h1>
+      <div className={styles.random}></div>
+      <h1 className={styles.heading}>{formattedPrice}</h1>
+      <div className={`${styles.buttonWrapper}`}>
           <button onClick={Increment}><Plus /></button>
           <button onClick={Decrement}><Minus /></button>
-      </div>
+          </div>
+        </div>
     </div>, document.querySelector("#drawer")!
 )
 }
