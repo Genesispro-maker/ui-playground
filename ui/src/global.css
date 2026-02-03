@@ -34,6 +34,7 @@
   --drawer-bg-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --drawer-text-color: black;
   --drawer-text-thickness: 2px;
+  --drawer-button-border-color: white;
 }
 
 [data-theme = "light"]{
@@ -47,6 +48,7 @@
   --drawer-bg-color: black;
   --drawer-text-color: white;
   --drawer-text-thickness: 5px;
+  --drawer-button-border-color: black;
 }
 
 
@@ -88,6 +90,22 @@ body{
 .herotext img{
   vertical-align: middle;
   float: left;
+}
+
+.drawerButton{
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid var(--drawer-button-border-color);
+  color: var(--drawer-button-border-color);
+  /* backdrop-filter: blur(10px); */
+  text-align: center;
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  margin: 20px;
 }
 
 @media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
