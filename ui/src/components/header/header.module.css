@@ -1,0 +1,56 @@
+@import "../../assets/font.css";
+
+.header{
+     width: 1300px;
+     padding: 20px;
+     margin: auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.heading{
+    font-family: "Doto", sans-serif;
+    font-weight: 900;
+    color: var(--font-color);
+    user-select: none;
+}
+
+.link{
+   background: none;
+}
+.github{
+    stroke: var(--font-color);
+
+    &:hover{
+        stroke: blue;
+    }
+}
+
+.themeButtonWrapper{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+.themeButton{
+    background: none;
+    border: none;
+}
+
+.themeIcon{
+    stroke: var(--font-color);
+}
+
+
+
+
+@media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
+    .header{
+        width: 350px;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

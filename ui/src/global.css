@@ -1,0 +1,103 @@
+@import "./assets/font.css";
+
+:root {
+  --shadow-color: 285deg 26% 35%;
+  --shadow-elevation-low:
+    0.7px -0.1px 0.5px hsl(var(--shadow-color) / 1),
+    1.1px -0.2px 0.8px -2.5px hsl(var(--shadow-color) / 0.69),
+    3.6px -0.6px 2.7px -5px hsl(var(--shadow-color) / 0.35);
+  --shadow-elevation-medium:
+    0.7px -0.1px 0.5px hsl(var(--shadow-color) / 1),
+    1.3px -0.2px 1px -1.7px hsl(var(--shadow-color) / 0.82),
+    5.8px -0.9px 4.4px -3.3px hsl(var(--shadow-color) / 0.55),
+    17.8px -2.8px 13.5px -5px hsl(var(--shadow-color) / 0.27);
+  --shadow-elevation-high:
+    0.7px -0.1px 0.5px hsl(var(--shadow-color) / 1),
+    1px -0.2px 0.8px -0.7px hsl(var(--shadow-color) / 0.89),
+    3.2px -0.5px 2.4px -1.4px hsl(var(--shadow-color) / 0.76),
+    9.1px -1.4px 6.9px -2.1px hsl(var(--shadow-color) / 0.63),
+    20.5px -3.3px 15.6px -2.9px hsl(var(--shadow-color) / 0.51),
+    39.3px -6.2px 29.8px -3.6px hsl(var(--shadow-color) / 0.38),
+    67.5px -10.7px 51.3px -4.3px hsl(var(--shadow-color) / 0.25),
+    106.7px -16.9px 81px -5px hsl(var(--shadow-color) / 0.13);
+}
+
+[data-theme = "dark"]{
+  --bg-color: #111110;
+  --font-color: white;
+  --stroke: white;
+  --fill: white;
+  --timers: white;
+  --parent: rgba(255, 255, 255, 0.2);
+  --child: white;
+}
+
+[data-theme = "light"]{
+  --bg-color: #ffff;
+  --font-color: black;
+  --stroke: black;
+  --fill: black;
+  --timers: black;
+  --parent: lightgray;
+  --child: gray;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+     --bg-color: #111110;
+}
+
+body{
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+.herotext{
+  color: var(--font-color);
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-kerning: normal;
+  text-rendering: optimizeSpeed;
+  font-weight: lighter;
+  display: inline-block;
+}
+
+.herotext span{
+  font-family: "Dancing Script", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.herotext img{
+  vertical-align: middle;
+  float: left;
+}
+
+@media (max-width: 500px) and (min-width: 300px) and (orientation: portrait){
+  .herotext{
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+  .herotext span{
+    display: inline-block;
+  }
+
+  .herotext img{
+    vertical-align: middle;
+    float: left;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+  }
+}

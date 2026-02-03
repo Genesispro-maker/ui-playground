@@ -1,0 +1,112 @@
+@import "../../assets/font.css";
+
+
+.wrapper{
+    max-width: 649px;
+    height: 300px;
+    margin: 100px auto 20px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.BoxWrap{
+  flex: 3;
+}
+
+.box{
+    --width: 64px;
+    --height: 64px;
+    width: var(--width);
+    height: var(--height);
+    margin: auto;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.Rangewrapper{
+    display: flex;
+    width: 647px;
+    justify-content: space-around;
+    border-top: 0.5px solid lightgray;
+    flex: 1;
+    padding: 10px;
+    position: relative;
+}
+
+
+
+.valuesWrapper{
+  margin: 10px auto;
+  width: 300px;
+  height: 20px;
+  background-color: lightgrey;
+  padding-left: 25px;
+  border-radius: 3px;
+}
+
+.value:first-of-type{
+  font-family: "Doto", sans-serif;
+  font-weight: bolder;
+  position: absolute;
+  top: 15px;
+  left: 60px;
+}
+
+.value:last-of-type{
+   font-family: "Doto", sans-serif;
+  font-weight: bolder;
+  position: absolute;
+  top: 15px;
+  right: 60px;
+}
+
+.input:first-of-type{
+  position: absolute;
+  left: 20px;
+  top: 50px;
+}
+
+.input:last-of-type{
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+
+
+
+@media (min-width: 350px) and (max-width: 500px) and (orientation: portrait){
+  .wrapper{
+     width: 100%;
+     border-radius: 0;
+     border-top: 3px solid lightgray;
+     border-right: none;
+     border-left: none;
+     height: 300px;
+     overflow: none;
+     border-bottom: 3px solid lightgray;
+  }
+
+  .Rangewrapper{
+    width: 100vw;
+
+  }
+
+  .value:first-of-type{
+    left: 20px;
+  }
+
+  .value.value:last-of-type{
+    right: 20px;
+  }
+
+  .input:first-of-type{
+    left: 15px;
+  }
+
+  .input:last-of-type{
+    right: 15px;
+  }
+}
