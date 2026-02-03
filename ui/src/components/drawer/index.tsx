@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 
 export const Drawer = ({initialValue, handleClose} : {initialValue: number, handleClose: () => void}) => {
    const [Amount, setAmount] = useState(initialValue)
+   const [isClosing, setIsClosing] = useState(false)
 
    const wrapperRef = useRef<HTMLDivElement | null>(null)
 
@@ -24,9 +25,14 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number, hand
         setAmount((amount) => amount - 1)
     }
 
+
+    function handleCloseDrawer(){
+        setIsClosing(true)
+        handleClose()
+    }
    
    return createPortal(
-       <div ref={wrapperRef} className={styles.wrapper}>
+       <div ref={wrapperRef} className={`${styles.wrapper} ${isClosing ? styles.slideout : ""}`}>
 
       <div className={styles.drawer}>
 
@@ -42,7 +48,7 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number, hand
 
           </div>
 
-          <button className={styles.closeButton} onClick={handleClose}><X />close</button>
+          <button className={styles.closeButton} onClick={() => handleCloseDrawer()}><X />close</button>
 
         </div>
     </div>, document.querySelector("#drawer")!

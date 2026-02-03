@@ -117,10 +117,25 @@
   gap: 5px;
 }
 
+.slideout{
+  animation: slide-out 500ms cubic-bezier(.14,.78,.36,1);
+}
 
+
+@keyframes slide-out{
+  from{
+    transform: translateY(0%);
+  }
+  to{
+    transform: translateY(100%);
+  }
+}
 
 @keyframes slide-in{
   from{
     transform: translateY(100%);
+  }
+  to{
+    transform: translateY(0%);
   }
 }
