@@ -1,12 +1,14 @@
 import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from './drawer.module.css'
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 
-export const Drawer = ({initialValue, handleClose} : {initialValue: number}) => {
+export const Drawer = ({initialValue, handleClose} : {initialValue: number, handleClose: () => void}) => {
    const [Amount, setAmount] = useState(initialValue)
+
+   const wrapperRef = useRef<HTMLDivElement | null>(null)
 
     const formattedPrice = new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -22,8 +24,16 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number}) => 
         setAmount((amount) => amount - 1)
     }
 
+    useEffect(() => {
+        function Animate(){
+            wrapperRef.current?.animate([{transform: "translateY(0%)"}], {duration: 1000, easing: "ease-in-out"})
+        }
+
+
+        wrapperRef.current?.addEventListener("click", Animate)
+    })
    return createPortal(
-       <div className={styles.wrapper}>
+       <div ref={wrapperRef} className={styles.wrapper}>
 
       <div className={styles.drawer}>
 
