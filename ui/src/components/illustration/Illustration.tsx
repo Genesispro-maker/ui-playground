@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from "./illustration.module.css"
 
 export function Illustration(){
-     const [position, setPosition] = useState({x: 0, y: 0})
+     const [position, setPosition] = useState<{x: number, y: number}>({x: 0, y: 0})
 
     return(
         <>

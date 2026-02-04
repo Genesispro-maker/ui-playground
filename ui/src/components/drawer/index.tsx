@@ -1,13 +1,12 @@
 import { Minus, Plus } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState} from "react";
 import styles from './drawer.module.css'
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 
 export const Drawer = ({initialValue, handleClose} : {initialValue: number, handleClose: () => void}) => {
-   const [Amount, setAmount] = useState(initialValue)
-   const [isClosing, setIsClosing] = useState(false)
+   const [Amount, setAmount] = useState<number>(initialValue)
 
    const wrapperRef = useRef<HTMLDivElement | null>(null)
 
@@ -32,7 +31,7 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number, hand
     }
    
    return createPortal(
-       <div ref={wrapperRef} className={`${styles.wrapper} ${isClosing ? styles.slideout : ""}`}>
+       <div ref={wrapperRef} className={`${styles.wrapper}`}>
 
       <div className={styles.drawer}>
 
