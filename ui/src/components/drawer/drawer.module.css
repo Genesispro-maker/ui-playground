@@ -39,69 +39,7 @@
   justify-self: center;
   align-self: flex-start;
 }
-.dataWrapper{
-  display: flex;
-  flex-direction: column;
-}
 
-.buttonWrapper{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: 200px;
-}
-
-
-.heading{
-  justify-self: center;
-  margin: 30px;
-  font-size: 5rem;
-  background: linear-gradient(
-    45deg,
-    hsl(96deg 81% 37%) 0%,
-    hsl(84deg 100% 32%) 4%,
-    hsl(76deg 100% 31%) 8%,
-    hsl(68deg 100% 30%) 13%,
-    hsl(59deg 100% 29%) 17%,
-    hsl(51deg 100% 32%) 21%,
-    hsl(44deg 100% 34%) 25%,
-    hsl(37deg 100% 37%) 29%,
-    hsl(31deg 100% 39%) 33%,
-    hsl(26deg 100% 41%) 37%,
-    hsl(20deg 100% 43%) 42%,
-    hsl(13deg 100% 45%) 46%,
-    hsl(0deg 100% 47%) 50%,
-    hsl(14deg 100% 44%) 54%,
-    hsl(22deg 100% 41%) 58%,
-    hsl(29deg 100% 38%) 63%,
-    hsl(36deg 100% 35%) 67%,
-    hsl(43deg 100% 31%) 71%,
-    hsl(52deg 100% 28%) 75%,
-    hsl(62deg 100% 25%) 79%,
-    hsl(72deg 100% 26%) 83%,
-    hsl(81deg 100% 27%) 87%,
-    hsl(96deg 73% 32%) 92%,
-    hsl(120deg 50% 38%) 96%,
-    hsl(146deg 88% 30%) 100%
-  );
- -webkit-text-stroke: var(--drawer-text-thickness) transparent;
- color: var(--drawer-text-color);
- -webkit-background-clip: text;
- background-clip: text;
-}
-
-.btns{
-  width: 50px;
-  height: 50px;
-  background-color:  hsl(0, 0% 100% 1);
-  color: var(--drawer-text-color);
-  background: none;
-  border: 1px solid var(--drawer-text-color);
-  border-radius: 5px;
-}
 
 .closeButton{
   display: flex;
@@ -117,19 +55,6 @@
   gap: 5px;
 }
 
-.slideout{
-  animation: slide-out 500ms cubic-bezier(.14,.78,.36,1);
-}
-
-
-@keyframes slide-out{
-  from{
-    transform: translateY(0%);
-  }
-  to{
-    transform: translateY(100%);
-  }
-}
 
 @keyframes slide-in{
   from{
