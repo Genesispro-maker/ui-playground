@@ -6,8 +6,9 @@ import { TextData } from "./utils/data"
 import { Drawer } from "./components/drawer";
 import { useCallback, useState, useEffect } from "react";
 
+
 function useToggle(initialValue = false){
-    const [toggle, setToggle] = useState(initialValue)
+    const [toggle, setToggle] = useState<boolean>(initialValue)
 
 
     const handleToggleOpen = useCallback(() => {
@@ -41,7 +42,7 @@ function App(){
     <>
      <Header />
      <div className="herotext">
-        <h3>welcome to my <span style={{color: TextData[morph].color, transform: "scale(1)", transition: "transform 0.5s ease-in-out"}}>{TextData[morph].text}</span> where i put my UI engineering skills to work</h3>
+        <h3>welcome to my <span style={{color: TextData[morph].color}}>{TextData[morph].text}</span> where i put my UI engineering skills to work</h3>
      </div>
      <Illustration />
      <ApplePlayer />
