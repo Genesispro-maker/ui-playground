@@ -4,17 +4,19 @@ import { Header } from "./components/header/header";
 import { Illustration } from "./components/illustration/Illustration";
 import { TextData } from "./utils/data"
 import { Drawer } from "./components/drawer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useToggle } from "./hooks/use-toogle";
+import { Minus, Plus } from "lucide-react";
 
 
 function App(){
    const [isOpen, handleIsOpen] = useToggle(false)
+   const [AmountCount, setAmountCount] = useState<number>(0)
    const morph = useMorph(TextData)
 
    
  useEffect(() => {
-       function Escape(e: KeyboardEvent){
+       const Escape = (e: KeyboardEvent) => {
          if(e.code === "Escape"){
             handleIsOpen()
          }
@@ -27,6 +29,26 @@ function App(){
        }
     }, [isOpen, handleIsOpen])
 
+
+
+    const Increment = () => {
+      setAmountCount((count) => count + 1)
+    }
+
+    const Decrement = () => {
+      setAmountCount((count) => count - 1)
+    }
+    
+
+    
+    const formattedPrice = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    }).format(AmountCount)
+
+
+
+
    return (
     <>
      <Header />
@@ -36,7 +58,22 @@ function App(){
      <Illustration />
      <ApplePlayer />
      <button className="drawerButton" onClick={handleIsOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
-     {isOpen && <Drawer handleClose={handleIsOpen} initialValue={0}/>}
+    
+     {isOpen && (
+
+     <Drawer handleClose={handleIsOpen}>
+
+      <h1 className="heading">{formattedPrice}</h1>
+
+      <div className="buttonWrapper">
+
+          <button className="btns" onClick={Increment}><Plus /></button>
+
+          <button className="btns" onClick={Decrement}><Minus /></button>
+
+          </div>
+          
+      </Drawer>)}
     </>
    )
 }
