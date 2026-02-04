@@ -4,19 +4,8 @@ import { Header } from "./components/header/header";
 import { Illustration } from "./components/illustration/Illustration";
 import { TextData } from "./utils/data"
 import { Drawer } from "./components/drawer";
-import { useCallback, useState, useEffect } from "react";
-
-
-function useToggle(initialValue = false){
-    const [toggle, setToggle] = useState<boolean>(initialValue)
-
-
-    const handleToggleOpen = useCallback(() => {
-        setToggle((currentToggle) => !currentToggle)
-    },  [])
-
-    return [toggle, handleToggleOpen]
-}
+import { useEffect } from "react";
+import { useToggle } from "./hooks/use-toogle";
 
 
 function App(){
