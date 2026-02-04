@@ -26,7 +26,6 @@ export const Drawer = ({initialValue, handleClose} : {initialValue: number, hand
 
 
     function handleCloseDrawer(){
-        setIsClosing(true)
         handleClose()
     }
    
