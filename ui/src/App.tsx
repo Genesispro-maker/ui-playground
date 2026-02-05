@@ -10,7 +10,7 @@ import { Minus, Plus } from "lucide-react";
 
 
 function App(){
-   const [isOpen, handleIsOpen] = useToggle(false)
+   const [isOpen, toggleOpen] = useToggle();
    const [AmountCount, setAmountCount] = useState<number>(0)
    const morph = useMorph(TextData)
 
@@ -18,16 +18,16 @@ function App(){
  useEffect(() => {
        const Escape = (e: KeyboardEvent) => {
          if(e.code === "Escape"){
-            handleIsOpen()
+            toggleOpen()
          }
        }
 
        window.addEventListener("keydown", Escape)
 
        return () => {
-         window.addEventListener("keydown", Escape)
+         window.removeEventListener("keydown", Escape)
        }
-    }, [isOpen, handleIsOpen])
+    }, [isOpen, toggleOpen])
 
 
 
@@ -57,11 +57,11 @@ function App(){
      </div>
      <Illustration />
      <ApplePlayer />
-     <button className="drawerButton" onClick={handleIsOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
+     <button className="drawerButton" onClick={toggleOpen}>{isOpen ? "close drawer" : "open drawer"}</button>
     
      {isOpen && (
 
-     <Drawer handleClose={handleIsOpen}>
+     <Drawer handleClose={toggleOpen}>
 
       <h1 className="heading">{formattedPrice}</h1>
 

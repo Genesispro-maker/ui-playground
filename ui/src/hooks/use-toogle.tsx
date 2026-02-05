@@ -8,5 +8,5 @@ export function useToggle(initialValue = false){
         setToggle((currentToggle) => !currentToggle)
     },  [])
 
-    return [toggle, handleToggleOpen]
+    return [toggle, handleToggleOpen] as const;
 }
