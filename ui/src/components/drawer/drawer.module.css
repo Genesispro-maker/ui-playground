@@ -35,6 +35,7 @@
 
   animation: slide-in 500ms cubic-bezier(.14,.78,.36,1);
   z-index: 2;
+
 }
 
 .random{
