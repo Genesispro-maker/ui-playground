@@ -13,13 +13,17 @@ export const Drawer = ({handleClose, children} : {handleClose: () => void, child
    return createPortal(
        <div className={`${styles.wrapper}`}>
 
-      <div className={styles.drawer}>
+      <div className={styles.backdrop} />
 
-      <div className={styles.random} />
+           <div className={styles.drawer}>
+
+            <div className={styles.random} />
+
              {children}
-          <button className={styles.closeButton} onClick={() => handleCloseDrawer()}><X />close</button>
 
-        </div>
+          <button className={styles.closeButton} onClick={() => handleCloseDrawer()}><X />close</button>
+          
+           </div>
     </div>, document.querySelector("#drawer")!
 )
 }
