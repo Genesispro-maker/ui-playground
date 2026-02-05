@@ -1,11 +1,18 @@
 .wrapper{
-  position: relative;
+  position: fixed;
   inset: 0;
-  min-height: 500px;
+  min-height: 100%;
   max-width: 100%;
-  z-index: 1;
+  z-index: 9999;
 }
 
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: hsla(330, 5%, 8%, 0.75);
+  backdrop-filter: blur(3px);
+}
 
 .drawer {
   position: fixed;
@@ -28,16 +35,18 @@
 
   animation: slide-in 500ms cubic-bezier(.14,.78,.36,1);
   z-index: 2;
+
 }
 
 .random{
   width: 100px;
   height: 5px;
   border-radius: 10px;
-  background-color: lightgrey;
+  background-color: var(--drawer-random-color);
   display: flex;
   justify-self: center;
   align-self: flex-start;
+  position: absolute;
 }
 
 

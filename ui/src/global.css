@@ -35,6 +35,7 @@
   --drawer-text-color: black;
   --drawer-text-thickness: 2px;
   --drawer-button-border-color: white;
+  --drawer-random-color: gray;
 }
 
 [data-theme = "light"]{
@@ -49,6 +50,7 @@
   --drawer-text-color: white;
   --drawer-text-thickness: 5px;
   --drawer-button-border-color: black;
+  --drawer-random-color: white;
 }
 
 

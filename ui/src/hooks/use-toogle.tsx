@@ -4,7 +4,7 @@ export function useToggle(initialValue = false){
     const [toggle, setToggle] = useState<boolean>(initialValue)
 
 
-    const handleToggleOpen = useCallback(() => {
+    const handleToggleOpen : () => void = useCallback(() => {
         setToggle((currentToggle) => !currentToggle)
     },  [])
 
