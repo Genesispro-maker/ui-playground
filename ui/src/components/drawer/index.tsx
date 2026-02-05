@@ -28,7 +28,6 @@ export const Drawer = ({handleClose, children} : {handleClose: () => void, child
            </div>
 
           <Button className={styles.closeButton} onClick={() => handleCloseDrawer()}><X /> close</Button>
-        </div>
-    </div>, document.querySelector("#drawer")!
+        </div>, document.querySelector("#drawer")!
 )
 }
